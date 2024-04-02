@@ -37,8 +37,10 @@ public class UGStudent extends StudentFees {
         return hasScholarship;
     }
     
-    public String toString () { //do at the end
-        return " ";
+    public String toString () { 
+        return "Student name: " + super.getStudentName() + "\nStudentid:" + super.getStudentID() + "\nEnrolled" + super.isIsEnrolled() + "\nScholarhsip: " + this.hasScholarship + "\nScholarship amount: " + this.scholarshipAmount + "\nCourses enrolled" + this.coursesEnrolled + "\nPayable amount: HELP ON";
     }
     
+    //HELP WITH PAYABLE AMOUNT
+     
 }

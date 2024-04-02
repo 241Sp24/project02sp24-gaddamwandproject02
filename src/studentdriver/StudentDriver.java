@@ -15,33 +15,54 @@ public class StudentDriver {
         StudentFees[] students = new StudentFees[12];
         boolean check;
         
+        
+        
         while (input.hasNext()) {
             String line = input.nextLine();
 
             String[] person = line.split(","); //ask if we have to iterate and detemine wether lines of data is an instanceof class
             
+            int studentID = Integer.parseInt(person[0]);
+            String name = person[1];
+            boolean isEnrolled = Boolean.parseBoolean(person[2]);
+            
+           
             if (person[4].equals("true") || person[4].equals("false")) { //either UG or Grad student               
+                
                 check = isNum(person[5]);
+                int courseEnrolled = Integer.parseInt(person[3]);
                 
                 if (check == true) { //Undergraduate students
-                    students[count] = new UGStudent(person[1], ((int) person[0]), person[2], person[4], (double) person[5], (int) person[3]);
-                    //leave as error this will be correctly shortly
+                    Boolean hasScholarship = Boolean.parseBoolean(person[4]);
+                    int scholarshipAmount = Integer.parseInt(person[5]);
+
+                    students[count] = new UGStudent(name, studentID, isEnrolled, hasScholarship, scholarshipAmount, courseEnrolled);                
                 }
                 else{ //Graduate Students
+                    Boolean isGraduateAssistant = Boolean.parseBoolean(person[4]);
+                    String graduateAssistantType = person[5];
                     
+                    
+                    if (isGraduateAssistant == true) {
+                        students[count] = new GraduateStudent(name, studentID, isEnrolled, isGraduateAssistant, graduateAssistantType, courseEnrolled);
+                    }
+                    else {
+                        students[count] = new GraduateStudent(name, studentID, isEnrolled, isGraduateAssistant, courseEnrolled);
+                    }
+      
                 }
-              
-                
+
             }
             else { //online students
+                int noOfMonths = Integer.parseInt(person[3]);
                 
+                students[count] = new OnlineStudent(name, studentID, isEnrolled, noOfMonths);
             }
             
             count += 1;
         }
         
         
-        //StudentFees[] students = new StudentFees[12];
     }
     
     public static boolean isNum (String line) { //checks if a string is a number or not
