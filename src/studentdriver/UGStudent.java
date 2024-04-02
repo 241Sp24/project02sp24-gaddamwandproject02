@@ -18,7 +18,7 @@ public class UGStudent extends StudentFees {
     
     
     
-    public double getPayableAmount () { //finish later at end
+    public double getPayableAmount () { //check with teacher
         
         //ask teacher if this is how to getCredits per course
         double tuition = super.getPER_CREDIT_FEE() * (super.getCREDITS_PER_COURSE() * this.coursesEnrolled);

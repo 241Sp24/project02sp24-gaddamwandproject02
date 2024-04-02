@@ -30,7 +30,9 @@ public class GraduateStudent extends StudentFees {
         return isGraduateAssistant;
     }
     
-    public double getPayableAmount () { //finish later at end
+    public double getPayableAmount () { //fiqure how to make the tuition fee and additional fee here
+        double tuition = super.getPER_CREDIT_FEE() * (super.getCREDITS_PER_COURSE() * this.coursesEnrolled);
+        //return scholarshipAmount - (this.ADDITIONAL_FEES + tuition);
         return 0.0;
     }
     
