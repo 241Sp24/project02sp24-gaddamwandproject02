@@ -33,7 +33,16 @@ public class GraduateStudent extends StudentFees {
     public double getPayableAmount () { //fiqure how to make the tuition fee and additional fee here
         double tuition = super.getPER_CREDIT_FEE() * (super.getCREDITS_PER_COURSE() * this.coursesEnrolled);
         
-        return tuition + this.ADDITIONAL_FEES;
+        if (this.isGraduateAssistant == true) {
+            if (this.graduateAssistantType.equals("full")) {
+                return this.ADDITIONAL_FEES * 100.00 / 100.00;
+            }
+            else if (this.graduateAssistantType.equals("half")) {
+                return (this.ADDITIONAL_FEES + (tuition / 2)) * 100.00 / 100.00;
+            }
+        }
+               
+        return (this.ADDITIONAL_FEES + tuition) * 100.00 / 100.00;
     }
     
     public String toString () { 
