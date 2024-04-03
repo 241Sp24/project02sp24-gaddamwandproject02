@@ -84,15 +84,12 @@ public class StudentDriver {
             System.out.println(x);        
             if (count == numOfUGStudents - 1){
                 System.out.println();
-                System.out.println("**********Graduate students list**********");
-                
+                System.out.println("**********Graduate students list**********");                
             }
             if (count == numOfGradStudents + numOfUGStudents - 1) {
                 System.out.println();
-                System.out.println("**********Online students list**********");
-                
-            }
-            
+                System.out.println("**********Online students list**********");                
+            }            
             if (!(count == numOfGradStudents + numOfUGStudents - 1) || (count == numOfUGStudents - 1)) {
                 System.out.println();
             }
@@ -130,7 +127,7 @@ public class StudentDriver {
         }
         avg = total / count;
        
-        System.out.println("Average Students fee: " + avg);     
+        System.out.printf("Average Students fee: %.2f\n", avg);     
         System.out.println("Scholarship count: " + scholoCount);
         System.out.println("Total number of courses: " + courseCount);
         System.out.println();
@@ -157,7 +154,7 @@ public class StudentDriver {
 
         avg = total / count;
         
-        System.out.println("Average Students fee: " + avg);
+        System.out.printf("Average Students fee: %.2f\n", avg);
         System.out.println("Graduate Asistant Count: " + gradAsistCount);
         System.out.println("Total number of courses: " + courseCount);
         System.out.println();
@@ -175,6 +172,6 @@ public class StudentDriver {
         
         avg = total / count;
         
-        System.out.println("Average Students fee: " + avg);
+        System.out.printf("Average Students fee: %.2f\n", avg);
     }
 }

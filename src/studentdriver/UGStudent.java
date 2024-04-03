@@ -23,7 +23,7 @@ public class UGStudent extends StudentFees {
         if(super.isIsEnrolled() == false) {
             return 0.0;
         }
-        return ((this.scholarshipAmount - (this.ADDITIONAL_FEE + tuition)) * -1) * 100.00 / 100.00;
+        return (this.scholarshipAmount - (this.ADDITIONAL_FEE + tuition)) * -1;
         
     }
 

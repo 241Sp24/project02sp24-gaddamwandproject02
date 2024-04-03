@@ -11,7 +11,7 @@ public class OnlineStudent extends StudentFees {
     }
     
     public double getPayableAmount() {
-        return this.MONTHLY_FEE * this.noOfMonths;
+        return (this.MONTHLY_FEE * this.noOfMonths) * 100.00 / 100.00;
     }
     
     public String toString () { 

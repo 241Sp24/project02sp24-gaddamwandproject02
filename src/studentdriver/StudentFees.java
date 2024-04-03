@@ -53,5 +53,9 @@ public abstract class StudentFees {
         return " ";
     }
     
+    public static double roundIt (double num) { 
+        double newNum = Math.round(num * 100.00);
+        return newNum / 100.00;
+    }
     
 }
