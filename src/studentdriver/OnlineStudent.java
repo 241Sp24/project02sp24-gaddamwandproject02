@@ -14,8 +14,8 @@ public class OnlineStudent extends StudentFees {
         return this.MONTHLY_FEE * this.noOfMonths;
     }
     
-    public String toString () { //work on last
-        return "";
+    public String toString () { 
+        return "Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nNo of months: " + this.noOfMonths + "\nPayable amount: " + this.getPayableAmount();
     }
     
 }

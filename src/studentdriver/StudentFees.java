@@ -49,7 +49,7 @@ public abstract class StudentFees {
     
     public abstract double getPayableAmount () ;
     
-    public String toString () { //do at the end
+    public String toString () {
         return " ";
     }
     

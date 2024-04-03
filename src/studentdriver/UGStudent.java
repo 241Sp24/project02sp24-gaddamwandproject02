@@ -15,14 +15,16 @@ public class UGStudent extends StudentFees {
         this.coursesEnrolled = coursesEnrolled;
         
     }
-    
-    
-    
-    public double getPayableAmount () { //check with teacher
+
+    public double getPayableAmount () {
         
-        //ask teacher if this is how to getCredits per course
         double tuition = super.getPER_CREDIT_FEE() * (super.getCREDITS_PER_COURSE() * this.coursesEnrolled);
-        return this.scholarshipAmount - (this.ADDITIONAL_FEE + tuition);
+        
+        if(super.isIsEnrolled() == false) {
+            return 0.0;
+        }
+        return (this.scholarshipAmount - (this.ADDITIONAL_FEE + tuition)) * -1;
+        
     }
 
     public double getScholarshipAmount() {
@@ -33,14 +35,13 @@ public class UGStudent extends StudentFees {
         return coursesEnrolled;
     }
 
-    public boolean isHasScholarhsip() {
+    public boolean isHasScholarship() {
         return hasScholarship;
     }
     
     public String toString () { 
-        return "Student name: " + super.getStudentName() + "\nStudentid:" + super.getStudentID() + "\nEnrolled" + super.isIsEnrolled() + "\nScholarhsip: " + this.hasScholarship + "\nScholarship amount: " + this.scholarshipAmount + "\nCourses enrolled" + this.coursesEnrolled + "\nPayable amount: HELP ON";
+        return "Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nScholarhship: " + this.hasScholarship + "\nScholarship amount: " + this.scholarshipAmount + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: " + this.getPayableAmount();
     }
-    
-    //HELP WITH PAYABLE AMOUNT
+
      
 }
