@@ -11,11 +11,11 @@ public class OnlineStudent extends StudentFees {
     }
     
     public double getPayableAmount() {
-        return (this.MONTHLY_FEE * this.noOfMonths) * 100.00 / 100.00;
+        return (this.MONTHLY_FEE * this.noOfMonths);
     }
     
     public String toString () { 
-        return "Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nNo of months: " + this.noOfMonths + "\nPayable amount: " + this.getPayableAmount();
+        return String.format("Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nNo of months: " + this.noOfMonths + "\nPayable amount: %.2f", this.getPayableAmount());
     }
     
 }

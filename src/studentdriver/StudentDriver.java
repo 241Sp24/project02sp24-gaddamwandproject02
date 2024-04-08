@@ -81,7 +81,8 @@ public class StudentDriver {
           
         count = 0;
         for (StudentFees x : students) {
-            System.out.println(x);        
+            System.out.println(x); 
+            
             if (count == numOfUGStudents - 1){
                 System.out.println();
                 System.out.println("**********Graduate students list**********");                

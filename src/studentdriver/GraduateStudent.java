@@ -47,11 +47,11 @@ public class GraduateStudent extends StudentFees {
     
     public String toString () { 
         if (this.isIsGraduateAssistant() == false) {
-            return "Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nGraduate assistant: " + this.isGraduateAssistant + "\nGraduate assistant type: " + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: " + this.getPayableAmount();
+            return String.format("Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nGraduate assistant: " + this.isGraduateAssistant + "\nGraduate assistant type: " + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: %.2f", this.getPayableAmount());
 
         }
         
-        return "Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nGraduate assistant: " + this.isGraduateAssistant + "\nGraduate assistant type: " + this.graduateAssistantType + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: " + this.getPayableAmount();
+        return String.format("Student name: " + super.getStudentName() + "\nStudentid: " + super.getStudentID() + "\nEnrolled: " + super.isIsEnrolled() + "\nGraduate assistant: " + this.isGraduateAssistant + "\nGraduate assistant type: " + this.graduateAssistantType + "\nCourses enrolled: " + this.coursesEnrolled + "\nPayable amount: %.2f", this.getPayableAmount());
     }
     
     
