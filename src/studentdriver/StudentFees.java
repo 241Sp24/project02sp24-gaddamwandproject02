@@ -7,14 +7,15 @@ public abstract class StudentFees {
     private boolean isEnrolled;
     private int CREDITS_PER_COURSE = 3;
     private double PER_CREDIT_FEE = 543.50;
-    
+
     public StudentFees(String studentName, int studentID, boolean isEnrolled) {
         this.studentName = studentName;
         this.studentID = studentID;
         this.isEnrolled = isEnrolled;
-                
+
     }
 
+    // Getter and setter methods
     public String getStudentName() {
         return studentName;
     }
@@ -46,16 +47,16 @@ public abstract class StudentFees {
     public double getPER_CREDIT_FEE() {
         return PER_CREDIT_FEE;
     }
-    
-    public abstract double getPayableAmount () ;
-    
-    public String toString () {
+
+    public abstract double getPayableAmount();
+
+    public String toString() {
         return " ";
     }
-    
-    public static double roundIt (double num) { 
+
+    public static double roundIt(double num) {
         double newNum = Math.round(num * 100.00);
         return newNum / 100.00;
     }
-    
+
 }
